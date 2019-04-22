@@ -1,0 +1,19 @@
+version: '3'
+  
+   services:
+         - myvol:/data/malli
+       networks:
+         - mynet
+    mongo_express:
+      image: mongo-express
+      volumes:
+        - myvol:/test
+      networks:
+        - mynet
+  volumes:
+    myvol:
+      external: true
+  networks:
+    mynet:
+      external: true
+ 
